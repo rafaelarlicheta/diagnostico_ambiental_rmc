@@ -19,35 +19,39 @@
             padding: 0;
             margin: 0;
             background-color: #000000;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         }
-        /* Ajuste dos controles nativos do mapa para o tema escuro */
+        /* Ajuste dos controles nativos do mapa */
         .ol-control > * {
             background-color: #111111!important;
             color: #6df816!important;
-            border: 1px solid #6df816!important;
+            border: 2px solid #6df816!important;
             border-radius: 0px;
+            font-weight: bold!important;
         }
         .ol-attribution a, .gcd-gl-input::placeholder, .search-layer-input-search::placeholder {
             color: #6df816!important;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-weight: bold!important;
         }
         .search-layer-input-search {
             background-color: #111111!important;
-            border: 1px solid #6df816!important;
+            border: 2px solid #6df816!important;
             color: #ffffff!important;
+            font-weight: bold!important;
+            font-size: 14px!important;
         }
         .ol-control > *:focus, .ol-control >*:hover {
             background-color: #6df816!important;
             color: #000000!important;
         } 
         .ol-control {
-            background-color: rgba(0,0,0,0.6) !important;
-            padding: 4px !important;
-            border: 1px solid #333;
+            background-color: rgba(0,0,0,0.7) !important;
+            padding: 6px !important;
+            border: 2px solid #333;
         } 
         
-        /* ==================== LEGENDA CLEAN ALTO CONTRASTE ==================== */
+        /* ==================== AJUSTE DA LEGENDA: TEXT WRAPPING E MAX WIDTH ==================== */
         .ol-layerswitcher, 
         .ol-layerswitcher-open, 
         .ol-layerswitcher .panel, 
@@ -56,47 +60,66 @@
         .ol-layerswitcher label,
         .layer-switcher,
         .layer-switcher .panel {
-            background-color: #ffffff !important;
-            color: #000000 !important;
-            font-weight: bold !important;
-            font-family: 'Courier New', Courier, monospace !important;
+            background-color: #000000 !important;
+            color: #ffffff !important;
+            font-weight: 600 !important; /* Semibold */
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+            font-size: 13px !important;
+            line-height: 1.5 !important;
+        }
+        /* Força o texto longo a quebrar linha e limita a largura da legenda para não cobrir o mapa */
+        .ol-layerswitcher .panel, .layer-switcher .panel {
+            border: 2px solid #6df816 !important;
+            box-shadow: 0 0 15px rgba(109, 248, 22, 0.3) !important;
+            max-width: 260px !important;
+            white-space: normal !important;
+        }
+        .ol-layerswitcher label, .layer-switcher label {
+            white-space: normal !important;
+            word-break: break-word !important;
+            display: inline-block !important;
+            max-width: 200px !important;
+            vertical-align: middle !important;
         }
         .ol-layerswitcher button, .layer-switcher button {
             background-color: #111111 !important;
             color: #6df816 !important;
-            border: 1px solid #6df816 !important;
+            border: 2px solid #6df816 !important;
         }
         
-        /* Customização dos blocos de metadados */
+        /* Blocos internos de metadados */
         .secao-meta {
-            border: 1px dashed #6df816;
-            padding: 15px;
-            margin-bottom: 20px;
+            border: 2px dashed #6df816;
+            padding: 18px;
+            margin-bottom: 25px;
             text-align: left;
             background: #080808;
         }
         .secao-meta h4 {
             color: #6df816;
             margin-top: 0;
-            font-size: 14px;
+            font-size: 15px;
             text-transform: uppercase;
-            border-bottom: 1px solid #6df816;
-            padding-bottom: 5px;
+            border-bottom: 2px solid #6df816;
+            padding-bottom: 6px;
+            font-weight: bold;
         }
         .secao-meta p, .secao-meta ul {
-            font-size: 12px;
-            line-height: 1.5;
-            color: #e0e0e0;
-            margin: 8px 0;
+            font-size: 13px;
+            line-height: 1.6;
+            color: #ffffff;
+            margin: 10px 0;
+            font-weight: 600; /* Semibold */
         }
         .secao-meta ul {
-            padding-left: 20px;
+            padding-left: 22px;
         }
         .secao-meta strong {
             color: #6df816;
+            font-weight: bold;
         }
         
-        .scroll-custom::-webkit-scrollbar { width: 6px; }
+        .scroll-custom::-webkit-scrollbar { width: 8px; }
         .scroll-custom::-webkit-scrollbar-track { background: #000; }
         .scroll-custom::-webkit-scrollbar-thumb { background: #6df816; }
         </style>
@@ -110,120 +133,130 @@
             </div>
         </div>
 
-        <button onclick="document.getElementById('modalBoasVindas').style.display='flex';" style="position: absolute; top: 20px; left: 55px; z-index: 999; background: #000000; color: #6df816; border: 1px solid #6df816; padding: 10px 15px; font-family: 'Courier New', Courier, monospace; font-size: 11px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 12px rgba(109, 248, 22, 0.2); text-transform: uppercase;">
+        <button onclick="document.getElementById('modalBoasVindas').style.display='flex';" style="position: absolute; top: 20px; left: 55px; z-index: 999; background: #000000; color: #6df816; border: 2px solid #6df816; padding: 10px 18px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(109, 248, 22, 0.2); text-transform: uppercase;">
             [MENU PRINCIPAL]
         </button>
 
-        <div id="painelLegendaClasses" style="position: absolute; bottom: 20px; left: 20px; z-index: 998; background: rgba(0, 0, 0, 0.85); border: 1px solid #6df816; padding: 15px; width: 310px; box-shadow: 0 4px 20px rgba(109, 248, 22, 0.2); color: #ffffff; font-family: 'Courier New', Courier, monospace;">
+        <button onclick="var p = document.getElementById('painelLegendaClasses'); p.style.display = (p.style.display === 'block' ? 'none' : 'block');" style="position: absolute; bottom: 25px; left: 25px; z-index: 999; background: #000000; color: #6df816; border: 2px solid #6df816; padding: 12px 20px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(109, 248, 22, 0.3); text-transform: uppercase;">
+            [CLASSES DE CONFLITO]
+        </button>
+
+        <div id="painelLegendaClasses" style="position: absolute; bottom: 75px; left: 25px; z-index: 998; background: rgba(0, 0, 0, 0.95); border: 2px solid #6df816; padding: 18px; width: 340px; box-shadow: 0 4px 25px rgba(109, 248, 22, 0.4); color: #ffffff; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; display: none;">
             
-            <h4 style="color: #6df816; margin: 0 0 10px 0; font-size: 11px; text-transform: uppercase; border-bottom: 1px dashed #6df816; padding-bottom: 5px; letter-spacing: 0.5px; font-weight: bold;">
-                [CLASSES DE PERSISTÊNCIA]
+            <h4 style="color: #6df816; margin: 0 0 12px 0; font-size: 12px; text-transform: uppercase; border-bottom: 2px dashed #6df816; padding-bottom: 6px; letter-spacing: 0.5px; font-weight: bold; text-align: justify;">
+                CLASSES DE CONFLITO
             </h4>
-            <div class="scroll-custom" style="font-size: 10.5px; line-height: 1.4; text-align: justify; max-height: 30vh; overflow-y: auto; padding-right: 5px;">
-                <p style="margin: 6px 0;"><strong style="color: #6df816;">- Remanescente Conservado:</strong> Ausência de conflitos na série; associado a UCs já consolidadas.</p>
-                <p style="margin: 6px 0;"><strong style="color: #6df816;">- Conflito Ocasional:</strong> Ocorrência pontual em um dos anos; sugere baixa pressão antrópica.</p>
-                <p style="margin: 6px 0;"><strong style="color: #6df816;">- Conflito Recorrente:</strong> Ocorrência em dois anos da série; sugere pressão antrópica moderada.</p>
-                <p style="margin: 6px 0;"><strong style="color: #6df816;">- Conflito Frequente:</strong> Ocorrência em três anos; sugere pressão antrópica recorrente.</p>
-                <p style="margin: 6px 0;"><strong style="color: #6df816;">- Conflito Elevado:</strong> Ocorrência em quatro anos; sugere alta pressão antrópica.</p>
-                <p style="margin: 6px 0;"><strong style="color: #6df816;">- Crítico Persistente:</strong> Ocorrência em todos os anos; áreas críticas com necessidade de recuperação.</p>
+            
+            <div class="scroll-custom" style="font-size: 12px; line-height: 1.5; max-height: 38vh; overflow-y: auto; padding-right: 5px; font-weight: 600;">
+                
+                <p style="margin: 0 0 15px 0; font-size: 12px; line-height: 1.5; color: #ffffff; border-bottom: 1px dashed #333; padding-bottom: 12px; text-align: justify;">
+                    Foram definidos como Conflitos Ambientais as áreas que sofreram algum tipo de impacto com relação às atividades antrópicas de expansão em áreas consideradas de prioridade de conservação ambiental, avaliando assim as fragilidades desses espaços e as potencialidades relacionadas aos remanescentes.
+                </p>
+
+                <p style="margin: 8px 0; text-align: justify;"><strong style="color: #6df816;">- Remanescente Conservado:</strong> Ausência de conflitos na série; associado a UCs já consolidadas.</p>
+                <p style="margin: 8px 0; text-align: justify;"><strong style="color: #6df816;">- Conflito Ocasional:</strong> Ocorrência pontual em um dos anos; sugere baixa pressão antrópica.</p>
+                <p style="margin: 8px 0; text-align: justify;"><strong style="color: #6df816;">- Conflito Recorrente:</strong> Ocorrência em dois anos da série; sugere pressão antrópica moderada.</p>
+                <p style="margin: 8px 0; text-align: justify;"><strong style="color: #6df816;">- Conflito Frequente:</strong> Ocorrência em três anos; sugere pressão antrópica recorrente.</p>
+                <p style="margin: 8px 0; text-align: justify;"><strong style="color: #6df816;">- Conflito Elevado:</strong> Ocorrência em quatro anos; sugere alta pressão antrópica.</p>
+                <p style="margin: 8px 0; text-align: justify;"><strong style="color: #6df816;">- Crítico Persistente:</strong> Ocorrência em todos os anos; áreas críticas com necessidade de recuperação.</p>
             </div>
 
-            <h4 style="color: #6df816; margin: 15px 0 10px 0; font-size: 11px; text-transform: uppercase; border-bottom: 1px dashed #6df816; padding-bottom: 5px; letter-spacing: 0.5px; font-weight: bold;">
-                [TRANSPARÊNCIA DAS CAMADAS]
+            <h4 style="color: #6df816; margin: 18px 0 12px 0; font-size: 12px; text-transform: uppercase; border-bottom: 2px dashed #6df816; padding-bottom: 6px; letter-spacing: 0.5px; font-weight: bold; text-align: justify;">
+                TRANSPARÊNCIA
             </h4>
-            <div style="display: flex; align-items: center; gap: 10px;">
-                <input type="range" id="sliderTransparencia" min="0" max="100" value="100" style="width: 100%; cursor: pointer; accent-color: #6df816; height: 4px;">
-                <span id="valorTransparencia" style="font-size: 11px; color: #6df816; font-weight: bold; min-width: 35px; text-align: right;">100%</span>
+            <div style="display: flex; align-items: center; gap: 12px;">
+                <input type="range" id="sliderTransparencia" min="0" max="100" value="100" style="width: 100%; cursor: pointer; accent-color: #6df816; height: 6px;">
+                <span id="valorTransparencia" style="font-size: 12px; color: #6df816; font-weight: bold; min-width: 40px; text-align: right;">100%</span>
             </div>
         </div>
 
         <div id="modalBoasVindas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000000; z-index: 10000; display: flex; justify-content: center; align-items: center; padding: 15px; box-sizing: border-box;">
             
-            <div style="background: #000000; padding: 30px; max-width: 660px; width: 100%; border: 2px solid #6df816; text-align: center; box-shadow: 0 0 20px rgba(109, 248, 22, 0.2); color: #ffffff;">
+            <div style="background: #000000; padding: 35px; max-width: 700px; width: 100%; border: 3px solid #6df816; text-align: center; box-shadow: 0 0 30px rgba(109, 248, 22, 0.4); color: #ffffff;">
                 
-                <div style="font-size: 11px; color: #888; text-align: left; line-height: 1.4; border-bottom: 1px dashed #333; padding-bottom: 10px; margin-bottom: 20px;">
+                <div style="font-size: 12px; color: #aaa; text-align: left; line-height: 1.5; border-bottom: 2px dashed #333; padding-bottom: 12px; margin-bottom: 22px; font-weight: 600;">
                     INSTITUIÇÃO: UNIVERSIDADE FEDERAL DO PARANÁ (UFPR)<br>
                     CURSO: GRADUAÇÃO EM GEOGRAFIA | DISCIPLINA: SIG2<br>
                     DOCENTE: CATHERINE TORRES DE ALMEIDA<br>
                     AUTOR(A): RAFAELA LICHETA
                 </div>
                 
-                <h2 style="color: #6df816; margin-top: 0; font-size: 15px; font-weight: bold; text-transform: uppercase; line-height: 1.5; letter-spacing: 0.5px; border-bottom: 1px dashed #333; padding-bottom: 12px;">
+                <h2 style="color: #6df816; margin-top: 0; font-size: 16px; font-weight: bold; text-transform: uppercase; line-height: 1.5; letter-spacing: 0.5px; border-bottom: 2px dashed #333; padding-bottom: 15px; text-align: justify;">
                     Mapa-Diagnóstico de Conflitos entre Expansão Antrópica e Áreas Prioritárias para Conservação da Mata Atlântica na Região Metropolitana de Curitiba
                 </h2>
                 
-                <p style="font-size: 13px; line-height: 1.6; text-align: justify; margin-top: 20px; color: #e0e0e0;">
+                <p style="font-size: 14px; line-height: 1.6; text-align: justify; margin-top: 22px; color: #ffffff; font-weight: 600;">
                     <strong>OBJETIVO:</strong> Diagnosticar a vulnerabilidade ambiental dos fragmentos de Mata Atlântica na RMC através da representação de dados multitemporais e critérios de prioridade de conservação. O sistema realiza um diagnóstico de integridade ambiental relacionando a presença de remanescentes florestais aos níveis de prioridade, identifica áreas de conflito com a expansão antrópica em locais sem cobertura vegetal e aponta setores estratégicos para a conservação, recuperação ambiental e fortalecimento da conectividade ecológica.
                 </p>
                 
-                <p style="color: #888; font-size: 10.5px; margin-top: 25px; text-align: left;">
-                    >> INTERAÇÃO: Use o painel flutuante no canto superior direito para alternar as camadas espaciais. Use o botão [MENU PRINCIPAL] no canto superior esquerdo para retornar a esta tela.
+                <p style="color: #aaa; font-size: 11px; margin-top: 30px; text-align: left; font-weight: 600;">
+                    &gt;&gt; INTERAÇÃO: Use o painel flutuante no canto superior direito para alternar as camadas espaciais. Use o botão [MENU PRINCIPAL] no canto superior esquerdo para retornar a esta tela.
                 </p>
                 
-                <div style="display: flex; gap: 15px; margin-top: 25px; flex-wrap: wrap;">
-                    <button onclick="document.getElementById('modalMetadados').style.display='flex';" style="background: transparent; color: #6df816; border: 1px solid #6df816; padding: 12px 20px; font-family: 'Courier New', Courier, monospace; font-size: 13px; font-weight: bold; cursor: pointer; flex: 1; min-width: 150px;">
+                <div style="display: flex; gap: 20px; margin-top: 30px; flex-wrap: wrap;">
+                    <button onclick="document.getElementById('modalMetadados').style.display='flex';" style="background: transparent; color: #6df816; border: 2px solid #6df816; padding: 15px 25px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; font-weight: bold; cursor: pointer; flex: 1; min-width: 160px; text-transform: uppercase;">
                         [METADADOS]
                     </button>
 
-                    <button onclick="document.getElementById('modalBoasVindas').style.display='none'; document.getElementById('modalMetadados').style.display='none'; if(typeof map !== 'undefined') { map.updateSize(); }" style="background: #6df816; color: #000000; border: 1px solid #6df816; padding: 12px 20px; font-family: 'Courier New', Courier, monospace; font-size: 13px; font-weight: bold; cursor: pointer; flex: 1; min-width: 150px;">
+                    <button onclick="document.getElementById('modalBoasVindas').style.display='none'; document.getElementById('modalMetadados').style.display='none'; if(typeof map !== 'undefined') { map.updateSize(); }" style="background: #6df816; color: #000000; border: 2px solid #6df816; padding: 15px 25px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; font-weight: bold; cursor: pointer; flex: 1; min-width: 160px; text-transform: uppercase;">
                         [EXPLORAR_MAPA]
                     </button>
                 </div>
             </div>
         </div>
 
-        <div id="modalMetadados" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); z-index: 10001; display: none; justify-content: center; align-items: center; padding: 15px; box-sizing: border-box;">
+        <div id="modalMetadados" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.95); z-index: 10001; display: none; justify-content: center; align-items: center; padding: 15px; box-sizing: border-box;">
             
-            <div class="scroll-custom" style="background: #000000; padding: 25px; max-width: 680px; width: 100%; max-height: 85vh; overflow-y: auto; border: 1px solid #6df816; color: #ffffff; position: relative;">
+            <div class="scroll-custom" style="background: #000000; padding: 30px; max-width: 720px; width: 100%; max-height: 85vh; overflow-y: auto; border: 2px solid #6df816; color: #ffffff; position: relative;">
                 
-                <button onclick="document.getElementById('modalMetadados').style.display='none';" style="position: absolute; top: 10px; right: 15px; background: none; border: none; font-size: 20px; color: #6df816; cursor: pointer; font-family: monospace;">X</button>
+                <button onclick="document.getElementById('modalMetadados').style.display='none';" style="position: absolute; top: 12px; right: 18px; background: none; border: none; font-size: 24px; color: #6df816; cursor: pointer; font-family: monospace; font-weight: bold;">X</button>
                 
-                <h3 style="color: #6df816; margin-top: 0; font-size: 15px; text-align: center; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px dashed #6df816; padding-bottom: 10px; margin-bottom: 20px;">
+                <h3 style="color: #6df816; margin-top: 0; font-size: 15px; text-align: center; text-transform: uppercase; letter-spacing: 1px; border-bottom: 2px solid #6df816; padding-bottom: 12px; margin-bottom: 25px; font-weight: bold;">
                     DICIONÁRIO DE DADOS E METADADOS DO PROJETO
                 </h3>
                 
                 <div class="secao-meta">
                     <h4>1. Áreas Estratégicas Para Conservação do Bioma Mata Atlântica</h4>
-                    <p><strong>Tipo:</strong> Camada vetorial composta por áreas selecionadas a partir dos resultados da análise dos Conflitos Ambientais e da distribuição das Áreas Prioritárias para conservação da Mata Atlântica.</p>
-                    <p><strong>Descrição:</strong> As feições representam locais considerados relevantes para ações de conservação, recuperação ambiental, monitoramento territorial ou fortalecimento da conectividade ecológica na criação de novas UCs. O objetivo principal é destacar as áreas que demandam maior atenção no planejamento e gestão ambiental e que podem subsidiar futuras ações de gestão, conservação e recuperação do bioma na RMC.</p>
-                    <p><strong>Critérios de Seleção:</strong> Ocorrência de conflitos persistentes em áreas de elevada prioridade para conservação; presença de remanescentes estratégicos para a manutenção do bioma; potencial para recuperação ambiental e ampliação da conectividade entre fragmentos florestais; relevância territorial observada durante a análise espacial.</p>
-                    <p><strong>Fontes:</strong> MapBiomas (Uso e Cobertura); IBAMA (Áreas Prioritárias); IBGE (Limite RMC).</p>
-                    <p><strong>SRC:</strong> SIRGAS 2000 / UTM Zona 22S (EPSG:31982).</p>
+                    <p style="text-align: justify;"><strong>Tipo:</strong> Camada vetorial composta por áreas selecionadas a partir dos resultados da análise dos Conflitos Ambientais e da distribuição das Áreas Prioritárias para conservação da Mata Atlântica.</p>
+                    <p style="text-align: justify;"><strong>Descrição:</strong> As feições representam locais considerados relevantes para ações de conservação, recuperação ambiental, monitoramento territorial ou fortalecimento da conectividade ecológica na criação de novas UCs. O objetivo principal é destacar as áreas que demandam maior atenção no planejamento e gestão ambiental e que podem subsidiar futuras ações de gestão, conservação e recuperação do bioma na RMC.</p>
+                    <p style="text-align: justify;"><strong>Critérios de Seleção:</strong> Ocorrência de conflitos persistentes em áreas de elevada prioridade para conservação; presença de remanescentes estratégicos para a manutenção do bioma; potencial para recuperação ambiental e ampliação da conectividade entre fragmentos florestais; relevância territorial observada durante a análise espacial.</p>
+                    <p style="text-align: justify;"><strong>Fontes:</strong> MapBiomas (Uso e Cobertura); IBAMA (Áreas Prioritárias); IBGE (Limite RMC).</p>
+                    <p style="text-align: justify;"><strong>SRC:</strong> SIRGAS 2000 / UTM Zona 22S (EPSG:31982).</p>
                 </div>
 
                 <div class="secao-meta">
                     <h4>2. Persistência de Conflitos Ambientais no Bioma Mata Atlântica (2000-2024)</h4>
-                    <p><strong>Tipo:</strong> Camada raster resultante da análise espaço-temporal dos conflitos entre a ocupação antrópica e as áreas prioritárias para conservação na RMC.</p>
-                    <p><strong>Metodologia:</strong> Gerado a partir da soma dos mapas de conflito referentes aos anos de 2000, 2012, 2018, 2020 e 2024, permitindo identificar a frequência de ocorrência de conflitos ao longo da série histórica.</p>
-                    <p><strong>Classes de Persistência Catalogadas:</strong></p>
+                    <p style="text-align: justify;"><strong>Tipo:</strong> Camada raster resultante da análise espaço-temporal dos conflitos entre a ocupação antrópica e as áreas prioritárias para conservação na RMC.</p>
+                    <p style="text-align: justify;"><strong>Metodologia:</strong> Gerado a partir da soma dos mapas de conflito referentes aos anos de 2000, 2012, 2018, 2020 e 2024, permitindo identificar a frequência de ocorrência de conflitos ao longo da série histórica.</p>
+                    <p style="text-align: justify;"><strong>Classes de Persistência Catalogadas:</strong></p>
                     <ul>
-                        <li><strong>Remanescente Conservado:</strong> Ausência de conflitos durante toda a série histórica, geralmente associado a UCs já consolidadas desde o início da série.</li>
-                        <li><strong>Conflito Ocasional:</strong> Ocorrência pontual de conflitos em um dos anos da série histórica, sugerindo baixa pressão antrópica.</li>
-                        <li><strong>Conflito Recorrente:</strong> Ocorrência de conflitos em dois dos anos da série histórica, sugerindo pressão antrópica moderada.</li>
-                        <li><strong>Conflito Frequente:</strong> Ocorrência de conflitos em três dos anos da série histórica, sugerindo pressão antrópica recorrente.</li>
-                        <li><strong>Conflito Elevado:</strong> Ocorrência de conflitos em quatro dos anos da série histórica, sugerindo alta pressão antrópica.</li>
-                        <li><strong>Conflito Crítico Persistente:</strong> Ocorrência de conflitos em todos os anos da série histórica, sugerindo áreas críticas para conservação com necessidade de recuperação.</li>
+                        <li style="text-align: justify;"><strong>Remanescente Conservado:</strong> Ausência de conflitos durante toda a série histórica, geralmente associado a UCs já consolidadas desde o início da série.</li>
+                        <li style="text-align: justify;"><strong>Conflito Ocasional:</strong> Ocorrência pontual de conflitos em um dos anos da série histórica, sugerindo baixa pressão antrópica.</li>
+                        <li style="text-align: justify;"><strong>Conflito Recorrente:</strong> Ocorrência de conflitos em dois dos anos da série histórica, sugerindo pressão antrópica moderada.</li>
+                        <li style="text-align: justify;"><strong>Conflito Frequente:</strong> Ocorrência de conflitos em três dos anos da série histórica, sugerindo pressão antrópica recorrente.</li>
+                        <li style="text-align: justify;"><strong>Conflito Elevado:</strong> Ocorrência de conflitos em quatro dos anos da série histórica, sugerindo alta pressão antrópica.</li>
+                        <li style="text-align: justify;"><strong>Conflito Crítico Persistente:</strong> Ocorrência de conflitos em todos os anos da série histórica, sugerindo áreas críticas para conservação com necessidade de recuperação.</li>
                     </ul>
-                    <p><strong>Resolução Espacial:</strong> 30 metros.</p>
-                    <p><strong>SRC:</strong> SIRGAS 2000 / UTM Zona 22S (EPSG:31982).</p>
+                    <p style="text-align: justify;"><strong>Resolução Espacial:</strong> 30 metros.</p>
+                    <p style="text-align: justify;"><strong>SRC:</strong> SIRGAS 2000 / UTM Zona 22S (EPSG:31982).</p>
                 </div>
 
                 <div class="secao-meta">
                     <h4>3. Limite da Região Metropolitana de Curitiba (exc. litoral)</h4>
-                    <p><strong>Fonte:</strong> Instituto Brasileiro de Geografia e Estatística (IBGE). Datum Original: SIRGAS 2000.</p>
-                    <p><strong>Conteúdo:</strong> Polígonos dos municípios que compõem a RMC.</p>
-                    <p><strong>Processamento:</strong> Recorte (Clip) para isolar apenas os municípios da área de estudo e reprojeção cartográfica para SIRGAS 2000 UTM Zone 22S (EPSG:31982).</p>
+                    <p style="text-align: justify;"><strong>Fonte:</strong> Instituto Brasileiro de Geografia e Estatística (IBGE). Datum Original: SIRGAS 2000.</p>
+                    <p style="text-align: justify;"><strong>Conteúdo:</strong> Polígonos dos municípios que compõem a RMC.</p>
+                    <p style="text-align: justify;"><strong>Processamento:</strong> Recorte (Clip) para isolar apenas os municípios da área de estudo e reprojeção cartográfica para SIRGAS 2000 UTM Zone 22S (EPSG:31982).</p>
                 </div>
 
                 <div class="secao-meta">
                     <h4>4. Unidades de Conservação (UCs) Estaduais e Municipais (IAT)</h4>
-                    <p><strong>Fonte:</strong> Instituto Água e Terra (IAT).</p>
-                    <p><strong>Descrição:</strong> Unidades de Conservação de Proteção Integral e de Uso Sustentável no estado do Paraná de gestão Estadual, elaboradas a partir da junção da delimitação de cada UC.</p>
-                    <p><strong>Aviso Técnico Legal:</strong> Foram empregadas diversas metodologias de delimitação apresentando os polígonos em fases diferentes de georreferenciamento e qualidade de delimitação (vide atributo situação). Na dúvida, o IAT deverá ser consultado. Limites de unidades de conservação cadastradas no CEUC ou delimitadas a partir da base legal de criação.<br><br>
+                    <p style="text-align: justify;"><strong>Fonte:</strong> Instituto Água e Terra (IAT).</p>
+                    <p style="text-align: justify;"><strong>Descrição:</strong> Unidades de Conservação de Proteção Integral e de Uso Sustentável no estado do Paraná de gestão Estadual, elaboradas a partir da junção da delimitação de cada UC.</p>
+                    <p style="text-align: justify;"><strong>Aviso Técnico Legal:</strong> Foram empregadas diversas metodologias de delimitação apresentando os polígonos em fases diferentes de georreferenciamento e qualidade de delimitação (vide atributo situação). Na dúvida, o IAT deverá ser consultado. Limites de unidades de conservação cadastradas no CEUC ou delimitadas a partir da base legal de criação.<br><br>
                     <strong>UC MUNICIPAL:</strong> Limites de unidades de conservação Municipais: A base de dados espacial encontra-se em avaliação e deve ser utilizada apenas como estimativa do limite da unidade de conservação.</p>
                 </div>
 
-                <button onclick="document.getElementById('modalMetadados').style.display='none';" style="background: #6df816; color: #000000; border: 1px solid #6df816; padding: 10px 20px; font-family: 'Courier New', Courier, monospace; font-size: 13px; font-weight: bold; cursor: pointer; width: 100%;">
+                <button onclick="document.getElementById('modalMetadados').style.display='none';" style="background: #6df816; color: #000000; border: 2px solid #6df816; padding: 12px 20px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; font-weight: bold; cursor: pointer; width: 100%; text-transform: uppercase;">
                     [VOLTAR_PARA_ABERTURA]
                 </button>
             </div>
@@ -259,9 +292,6 @@
                                 var titulo = camada.get('title');
                                 if (titulo) {
                                     var nomeNormalizado = titulo.toString().toLowerCase();
-                                    
-                                    // AJUSTE CRÍTICO: Altera APENAS as camadas que contêm "persist" ou "conflit" (seu raster)
-                                    // Todos os basemaps (Google, Esri) e os outros vetores de limites mantêm 100% da opacidade intacta!
                                     if (nomeNormalizado.includes('persist') || nomeNormalizado.includes('conflit')) {
                                         camada.setOpacity(fatorOpacidade);
                                     }
