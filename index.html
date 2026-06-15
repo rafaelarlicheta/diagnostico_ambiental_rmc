@@ -51,7 +51,7 @@
             border: 2px solid #333;
         } 
         
-        /* ==================== AJUSTE DA LEGENDA: TEXT WRAPPING E MAX WIDTH ==================== */
+        /* ==================== AJUSTE DA LEGENDA DA DIREITA ==================== */
         .ol-layerswitcher, 
         .ol-layerswitcher-open, 
         .ol-layerswitcher .panel, 
@@ -62,12 +62,11 @@
         .layer-switcher .panel {
             background-color: #000000 !important;
             color: #ffffff !important;
-            font-weight: 600 !important; /* Semibold */
+            font-weight: 600 !important;
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
             font-size: 13px !important;
             line-height: 1.5 !important;
         }
-        /* Força o texto longo a quebrar linha e limita a largura da legenda para não cobrir o mapa */
         .ol-layerswitcher .panel, .layer-switcher .panel {
             border: 2px solid #6df816 !important;
             box-shadow: 0 0 15px rgba(109, 248, 22, 0.3) !important;
@@ -87,7 +86,7 @@
             border: 2px solid #6df816 !important;
         }
         
-        /* Blocos internos de metadados */
+        /* Blocos de estilização de textos internos */
         .secao-meta {
             border: 2px dashed #6df816;
             padding: 18px;
@@ -109,14 +108,10 @@
             line-height: 1.6;
             color: #ffffff;
             margin: 10px 0;
-            font-weight: 600; /* Semibold */
+            font-weight: 600;
         }
         .secao-meta ul {
             padding-left: 22px;
-        }
-        .secao-meta strong {
-            color: #6df816;
-            font-weight: bold;
         }
         
         .scroll-custom::-webkit-scrollbar { width: 8px; }
@@ -137,36 +132,70 @@
             [MENU PRINCIPAL]
         </button>
 
-        <button onclick="var p = document.getElementById('painelLegendaClasses'); p.style.display = (p.style.display === 'block' ? 'none' : 'block');" style="position: absolute; bottom: 25px; left: 25px; z-index: 999; background: #000000; color: #6df816; border: 2px solid #6df816; padding: 12px 20px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(109, 248, 22, 0.3); text-transform: uppercase;">
-            [CLASSES DE CONFLITO]
-        </button>
-
-        <div id="painelLegendaClasses" style="position: absolute; bottom: 75px; left: 25px; z-index: 998; background: rgba(0, 0, 0, 0.95); border: 2px solid #6df816; padding: 18px; width: 340px; box-shadow: 0 4px 25px rgba(109, 248, 22, 0.4); color: #ffffff; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; display: none;">
+        <div style="position: absolute; bottom: 25px; left: 25px; z-index: 999; display: flex; gap: 15px; flex-wrap: wrap;">
             
-            <h4 style="color: #6df816; margin: 0 0 12px 0; font-size: 12px; text-transform: uppercase; border-bottom: 2px dashed #6df816; padding-bottom: 6px; letter-spacing: 0.5px; font-weight: bold; text-align: justify;">
-                CLASSES DE CONFLITO
-            </h4>
-            
-            <div class="scroll-custom" style="font-size: 12px; line-height: 1.5; max-height: 38vh; overflow-y: auto; padding-right: 5px; font-weight: 600;">
+            <div style="position: relative;">
+                <button onclick="var p = document.getElementById('painelLegendaClasses'); p.style.display = (p.style.display === 'block' ? 'none' : 'block'); document.getElementById('painelAdicionarAreas').style.display = 'none';" style="background: #000000; color: #6df816; border: 2px solid #6df816; padding: 12px 20px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(109, 248, 22, 0.3); text-transform: uppercase;">
+                    [CLASSES DE CONFLITO]
+                </button>
                 
-                <p style="margin: 0 0 15px 0; font-size: 12px; line-height: 1.5; color: #ffffff; border-bottom: 1px dashed #333; padding-bottom: 12px; text-align: justify;">
-                    Foram definidos como Conflitos Ambientais as áreas que sofreram algum tipo de impacto com relação às atividades antrópicas de expansão em áreas consideradas de prioridade de conservação ambiental, avaliando assim as fragilidades desses espaços e as potencialidades relacionadas aos remanescentes.
-                </p>
-
-                <p style="margin: 8px 0; text-align: justify;"><strong style="color: #6df816;">- Remanescente Conservado:</strong> Ausência de conflitos na série; associado a UCs já consolidadas.</p>
-                <p style="margin: 8px 0; text-align: justify;"><strong style="color: #6df816;">- Conflito Ocasional:</strong> Ocorrência pontual em um dos anos; sugere baixa pressão antrópica.</p>
-                <p style="margin: 8px 0; text-align: justify;"><strong style="color: #6df816;">- Conflito Recorrente:</strong> Ocorrência em dois anos da série; sugere pressão antrópica moderada.</p>
-                <p style="margin: 8px 0; text-align: justify;"><strong style="color: #6df816;">- Conflito Frequente:</strong> Ocorrência em três anos; sugere pressão antrópica recorrente.</p>
-                <p style="margin: 8px 0; text-align: justify;"><strong style="color: #6df816;">- Conflito Elevado:</strong> Ocorrência em quatro anos; sugere alta pressão antrópica.</p>
-                <p style="margin: 8px 0; text-align: justify;"><strong style="color: #6df816;">- Crítico Persistente:</strong> Ocorrência em todos os anos; áreas críticas com necessidade de recuperação.</p>
+                <div id="painelLegendaClasses" style="position: absolute; bottom: 50px; left: 0; background: rgba(0, 0, 0, 0.95); border: 2px solid #6df816; padding: 18px; width: 340px; box-shadow: 0 4px 25px rgba(109, 248, 22, 0.4); color: #ffffff; display: none;">
+                    <h4 style="color: #6df816; margin: 0 0 12px 0; font-size: 12px; text-transform: uppercase; border-bottom: 2px dashed #6df816; padding-bottom: 6px; font-weight: bold;">CLASSES DE CONFLITO</h4>
+                    <div class="scroll-custom" style="font-size: 12px; line-height: 1.5; max-height: 35vh; overflow-y: auto; padding-right: 5px; font-weight: 600;">
+                        <p style="margin: 0 0 15px 0; text-align: justify; color: #cccccc; font-style: italic; line-height: 1.4;">
+                            Foram definidos como Conflitos Ambientais as áreas que sofreram algum tipo de impacto com relação às atividades antrópicas de expansão em áreas consideradas de prioridade de conservação ambiental, avaliando assim as fragilidades desses espaços e as potencialidades relacionadas aos remanescentes.
+                        </p>
+                        <p style="margin: 8px 0; text-align: justify;"><strong style="color: #6df816;">- Remanescente Conservado:</strong> Ausência de conflitos na série; associado a UCs já consolidadas.</p>
+                        <p style="margin: 8px 0; text-align: justify;"><strong style="color: #6df816;">- Conflito Ocasional:</strong> Ocorrência pontual em um dos anos; sugere baixa pressão antrópica.</p>
+                        <p style="margin: 8px 0; text-align: justify;"><strong style="color: #6df816;">- Conflito Recorrente:</strong> Ocorrência em dois anos da série; sugere pressão antrópica moderada.</p>
+                        <p style="margin: 8px 0; text-align: justify;"><strong style="color: #6df816;">- Conflito Frequente:</strong> Ocorrência em três anos; sugere pressão antrópica recorrente.</p>
+                        <p style="margin: 8px 0; text-align: justify;"><strong style="color: #6df816;">- Conflito Elevado:</strong> Ocorrência em quatro anos; sugere alta pressão antrópica.</p>
+                        <p style="margin: 8px 0; text-align: justify;"><strong style="color: #6df816;">- Crítico Persistente:</strong> Ocorrência em todos os anos; áreas críticas com necessidade de recuperação.</p>
+                    </div>
+                    <h4 style="color: #6df816; margin: 18px 0 12px 0; font-size: 12px; text-transform: uppercase; border-bottom: 2px dashed #6df816; padding-bottom: 6px; font-weight: bold;">TRANSPARÊNCIA</h4>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <input type="range" id="sliderTransparencia" min="0" max="100" value="100" style="width: 100%; cursor: pointer; accent-color: #6df816; height: 6px;">
+                        <span id="valorTransparencia" style="font-size: 12px; color: #6df816; font-weight: bold; min-width: 40px; text-align: right;">100%</span>
+                    </div>
+                </div>
             </div>
 
-            <h4 style="color: #6df816; margin: 18px 0 12px 0; font-size: 12px; text-transform: uppercase; border-bottom: 2px dashed #6df816; padding-bottom: 6px; letter-spacing: 0.5px; font-weight: bold; text-align: justify;">
-                TRANSPARÊNCIA
-            </h4>
-            <div style="display: flex; align-items: center; gap: 12px;">
-                <input type="range" id="sliderTransparencia" min="0" max="100" value="100" style="width: 100%; cursor: pointer; accent-color: #6df816; height: 6px;">
-                <span id="valorTransparencia" style="font-size: 12px; color: #6df816; font-weight: bold; min-width: 40px; text-align: right;">100%</span>
+            <div style="position: relative;">
+                <button onclick="var p = document.getElementById('painelAdicionarAreas'); p.style.display = (p.style.display === 'block' ? 'none' : 'block'); document.getElementById('painelLegendaClasses').style.display = 'none';" style="background: #000000; color: #6df816; border: 2px solid #6df816; padding: 12px 20px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(109, 248, 22, 0.3); text-transform: uppercase;">
+                    [ADICIONAR ÁREAS ESTRATÉGICAS]
+                </button>
+                
+                <div id="painelAdicionarAreas" style="position: absolute; bottom: 50px; left: 0; background: rgba(0, 0, 0, 0.95); border: 2px solid #6df816; padding: 18px; width: 350px; box-shadow: 0 4px 25px rgba(109, 248, 22, 0.4); color: #ffffff; display: none;">
+                    <h4 style="color: #6df816; margin: 0 0 12px 0; font-size: 12px; text-transform: uppercase; border-bottom: 2px dashed #6df816; padding-bottom: 6px; font-weight: bold;">ADICIONAR ÁREAS ESTRATÉGICAS</h4>
+                    
+                    <p style="font-size: 13px; line-height: 1.5; text-align: justify; color: #ffffff; margin-bottom: 15px; font-weight: 600;">
+                        Aqui você pode fazer suas próprias análises de áreas que você considera estratégicas para a conservação do bioma!
+                    </p>
+                    
+                    <div class="scroll-custom" style="font-size: 12px; line-height: 1.5; max-height: 28vh; overflow-y: auto; border-bottom: 1px dashed #333; padding-bottom: 12px; margin-bottom: 15px; font-weight: 600;">
+                        <span style="color: #6df816; font-weight: bold; display: block; margin-bottom: 5px;">PASSO A PASSO:</span>
+                        <p style="margin: 4px 0; text-align: justify;">1. Vá na legenda (canto superior direito) e habilite a camada de fundo Google Satellite.</p>
+                        <p style="margin: 4px 0; text-align: justify;">2. Abra o painel de [Classes de Conflito] e diminua a transparência do raster para enxergar o terreno real por baixo.</p>
+                        <p style="margin: 4px 0; text-align: justify;">3. Escolha a categoria abaixo, clique em [ATIVAR MARCADOR] e clique no mapa para plantar as marcações.</p>
+                        <p style="margin: 6px 0; text-align: justify; color: #ff66cc; font-weight: bold;">💡 DICA: Para excluir um ponto errado, clique nele com o BOTÃO DIREITO do mouse!</p>
+                        <p style="margin: 4px 0; text-align: justify;">4. Finalizou? Clique em [BAIXAR CAMADA DE PONTOS] para gerar o arquivo GeoJSON para o QGIS.</p>
+                    </div>
+
+                    <label style="font-size: 11px; font-weight: bold; color: #aaa; display: block; margin-bottom: 5px;">SELECIONE A CATEGORIA DO MARCADOR:</label>
+                    <select id="selectCorEstrela" style="width: 100%; background: #111111; color: #ffffff; border: 1px solid #6df816; padding: 6px; font-family: sans-serif; font-size: 11px; font-weight: bold; margin-bottom: 15px; cursor: pointer;">
+                        <option value="#00a2ff">Área de Conflito Ambiental</option>
+                        <option value="#d800ff">Área de Remanescente Conservação</option>
+                    </select>
+
+                    <div style="display: flex; gap: 10px;">
+                        <button id="btnHabilitarDesenho" onclick="window.toggleMapeamento();" style="flex: 1; background: #000000; color: #6df816; border: 1px solid #6df816; padding: 8px; font-size: 11px; font-weight: bold; cursor: pointer; text-transform: uppercase;">
+                            [ATIVAR MARCADOR]
+                        </button>
+                        <button onclick="window.exportarMapeamento();" style="flex: 1; background: #000000; color: #6df816; border: 1px solid #6df816; padding: 8px; font-size: 11px; font-weight: bold; cursor: pointer; text-transform: uppercase;">
+                            [BAIXAR CAMADA DE PONTOS]
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -178,7 +207,7 @@
                     INSTITUIÇÃO: UNIVERSIDADE FEDERAL DO PARANÁ (UFPR)<br>
                     CURSO: GRADUAÇÃO EM GEOGRAFIA | DISCIPLINA: SIG2<br>
                     DOCENTE: CATHERINE TORRES DE ALMEIDA<br>
-                    AUTOR(A): RAFAELA LICHETA
+                    AUTORA: RAFAELA LICHETA
                 </div>
                 
                 <h2 style="color: #6df816; margin-top: 0; font-size: 16px; font-weight: bold; text-transform: uppercase; line-height: 1.5; letter-spacing: 0.5px; border-bottom: 2px dashed #333; padding-bottom: 15px; text-align: justify;">
@@ -219,7 +248,7 @@
                     <h4>1. Áreas Estratégicas Para Conservação do Bioma Mata Atlântica</h4>
                     <p style="text-align: justify;"><strong>Tipo:</strong> Camada vetorial composta por áreas selecionadas a partir dos resultados da análise dos Conflitos Ambientais e da distribuição das Áreas Prioritárias para conservação da Mata Atlântica.</p>
                     <p style="text-align: justify;"><strong>Descrição:</strong> As feições representam locais considerados relevantes para ações de conservação, recuperação ambiental, monitoramento territorial ou fortalecimento da conectividade ecológica na criação de novas UCs. O objetivo principal é destacar as áreas que demandam maior atenção no planejamento e gestão ambiental e que podem subsidiar futuras ações de gestão, conservação e recuperação do bioma na RMC.</p>
-                    <p style="text-align: justify;"><strong>Critérios de Seleção:</strong> Ocorrência de conflitos persistentes em áreas de elevada prioridade para conservação; presença de remanescentes estratégicos para a manutenção do bioma; potencial para recuperação ambiental e ampliação da conectividade entre fragmentos florestais; relevância territorial observada durante a análise espacial.</p>
+                    <p style="text-align: justify;"><strong>Critérios de Seleção:</strong> Ocorrência de conflitos persistententes em áreas de elevada prioridade para conservação; presença de remanescentes estratégicos para a manutenção do bioma; potencial para recuperação ambiental e ampliação da conectividade entre fragmentos florestais; relevância territorial observada durante a análise espacial.</p>
                     <p style="text-align: justify;"><strong>Fontes:</strong> MapBiomas (Uso e Cobertura); IBAMA (Áreas Prioritárias); IBGE (Limite RMC).</p>
                     <p style="text-align: justify;"><strong>SRC:</strong> SIRGAS 2000 / UTM Zona 22S (EPSG:31982).</p>
                 </div>
@@ -278,12 +307,12 @@
 
         <script>
         setTimeout(function() {
+            // 1. TRANSPARÊNCIA EXCLUSIVA DO RASTER
             var sliderT = document.getElementById("sliderTransparencia");
             if (sliderT) {
                 sliderT.addEventListener("input", function(e) {
                     var valorPct = e.target.value;
                     var fatorOpacidade = valorPct / 100;
-                    
                     document.getElementById("valorTransparencia").innerText = valorPct + "%";
                     
                     if (typeof layersList !== 'undefined' && Array.isArray(layersList)) {
@@ -300,6 +329,132 @@
                         });
                     }
                 });
+            }
+
+            // 2. MÓDULO DE MAPEAMENTO PARTICIPATIVO COM CORREÇÃO DE EXCLUSÃO INTERATIVA (FIXED CONTEXTMENU)
+            if (typeof map !== 'undefined') {
+                var fonteUsuario = new ol.source.Vector();
+                
+                var camadaUsuario = new ol.layer.Vector({
+                    source: fonteUsuario,
+                    title: 'Áreas estratégicas (usuário)',
+                    zIndex: 99999,
+                    style: function(feature) {
+                        var corPropria = feature.get('cor_ponto') || '#00a2ff';
+                        return new ol.style.Style({
+                            image: new ol.style.Circle({
+                                radius: 9, 
+                                fill: new ol.style.Fill({ color: corPropria }),
+                                stroke: new ol.style.Stroke({ color: '#ffffff', width: 2.5 })
+                            })
+                        });
+                    }
+                });
+                map.addLayer(camadaUsuario);
+
+                var interacaoDesenho = new ol.interaction.Draw({
+                    source: fonteUsuario,
+                    type: 'Point'
+                });
+
+                interacaoDesenho.on('drawend', function(evt) {
+                    var corAtual = document.getElementById("selectCorEstrela").value;
+                    
+                    var estiloFixo = new ol.style.Style({
+                        image: new ol.style.Circle({
+                            radius: 9,
+                            fill: new ol.style.Fill({ color: corAtual }),
+                            stroke: new ol.style.Stroke({ color: '#ffffff', width: 2.5 })
+                        })
+                    });
+                    
+                    evt.feature.setStyle(estiloFixo); 
+                    evt.feature.set('cor_ponto', corAtual); 
+                    evt.feature.changed(); 
+                });
+
+                window.toggleMapeamento = function() {
+                    var btn = document.getElementById("btnHabilitarDesenho");
+                    if (btn.classList.contains("ativo")) {
+                        map.removeInteraction(interacaoDesenho);
+                        btn.classList.remove("ativo");
+                        btn.style.background = "#000000";
+                        btn.style.color = "#6df816";
+                        btn.innerText = "[ATIVAR MARCADOR]";
+                    } else {
+                        map.addInteraction(interacaoDesenho);
+                        btn.classList.add("ativo");
+                        btn.style.background = "#6df816";
+                        btn.style.color = "#000000";
+                        btn.innerText = "[DESATIVAR]";
+                    }
+                };
+                
+                // CRIAÇÃO DO BOTÃO CONTEXTUAL DE EXCLUSÃO DE FORMA TOTALMENTE BLINDADA
+                var menuExcluir = document.createElement('div');
+                menuExcluir.id = 'menuExcluir';
+                menuExcluir.style.position = 'fixed'; // FIXED impede que ele flutue fora da tela do mapa
+                menuExcluir.style.display = 'none';
+                menuExcluir.style.background = '#000000';
+                menuExcluir.style.border = '2px solid #6df816';
+                menuExcluir.style.padding = '10px 14px';
+                menuExcluir.style.zIndex = '10005';
+                menuExcluir.style.cursor = 'pointer';
+                menuExcluir.style.color = '#6df816';
+                menuExcluir.style.fontWeight = 'bold';
+                menuExcluir.style.fontSize = '12px';
+                menuExcluir.style.boxShadow = '0 4px 15px rgba(109, 248, 22, 0.5)';
+                menuExcluir.innerText = '[EXCLUIR MARCADOR]';
+                document.body.appendChild(menuExcluir);
+
+                // CORREÇÃO: Varre as features da nossa própria fonte para evitar falha no clique
+                map.getViewport().addEventListener('contextmenu', function (evt) {
+                    evt.preventDefault();
+                    var pixel = map.getEventPixel(evt);
+                    
+                    var featureSelecionada = map.forEachFeatureAtPixel(pixel, function (feature) {
+                        if (fonteUsuario.getFeatures().includes(feature)) {
+                            return feature;
+                        }
+                    });
+                    
+                    if (featureSelecionada) {
+                        menuExcluir.style.left = evt.clientX + 'px';
+                        menuExcluir.style.top = evt.clientY + 'px';
+                        menuExcluir.style.display = 'block';
+                        
+                        // CORREÇÃO: mousedown com stopPropagation força a deleção ANTES do mapa fechar a div
+                        menuExcluir.onmousedown = function(e) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            fonteUsuario.removeFeature(featureSelecionada);
+                            menuExcluir.style.display = 'none';
+                        };
+                    } else {
+                        menuExcluir.style.display = 'none';
+                    }
+                });
+                
+                map.on('click', function() {
+                    menuExcluir.style.display = 'none';
+                });
+                
+                window.exportarMapeamento = function() {
+                    var features = fonteUsuario.getFeatures();
+                    if(features.length === 0) {
+                        alert("Plante algumas marcações neon no mapa antes de baixar o dataset!");
+                        return;
+                    }
+                    var format = new ol.format.GeoJSON();
+                    var geojsonStr = format.writeFeatures(features, { featureProjection: map.getView().getProjection() });
+                    var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(geojsonStr);
+                    var downloadAnchor = document.createElement('a');
+                    downloadAnchor.setAttribute("href", dataStr);
+                    downloadAnchor.setAttribute("download", "areas_estrategicas_usuario.geojson");
+                    document.body.appendChild(downloadAnchor);
+                    downloadAnchor.click();
+                    downloadAnchor.remove();
+                };
             }
         }, 1500);
         </script>
