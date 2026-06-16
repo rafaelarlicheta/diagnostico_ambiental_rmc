@@ -118,7 +118,7 @@
         .scroll-custom::-webkit-scrollbar-track { background: #000; }
         .scroll-custom::-webkit-scrollbar-thumb { background: #6df816; }
         </style>
-        <title>WebSIG - Diagnóstico Ambiental RMC</title>
+        <title>Mapa-Diagnóstico de Conflitos Ambientais e Áreas Estratégicas de Conservação do Bioma Mata Atlântica na Região Metropolitana de Curitiba (RMC)</title>
     </head>
     <body>
         <div id="map">
@@ -145,12 +145,12 @@
                         <p style="margin: 0 0 15px 0; text-align: justify; color: #cccccc; font-style: italic; line-height: 1.4;">
                             Foram definidos como Conflitos Ambientais as áreas que sofreram algum tipo de impacto com relação às atividades antrópicas de expansão em áreas consideradas de prioridade de conservação ambiental, avaliando assim as fragilidades desses espaços e as potencialidades relacionadas aos remanescentes.
                         </p>
-                        <p style="margin: 8px 0; text-align: justify;"><strong style="color: #6df816;">- Remanescente Conservado:</strong> Ausência de conflitos na série; associado a UCs já consolidadas.</p>
-                        <p style="margin: 8px 0; text-align: justify;"><strong style="color: #6df816;">- Conflito Ocasional:</strong> Ocorrência pontual em um dos anos; sugere baixa pressão antrópica.</p>
+                        <p style="margin: 8px 0; text-align: justify;"><strong style="color: #6df816;">- Área de Remanescente Conservado:</strong> Ausência de conflitos na série; associado a UCs já consolidadas desde o início da série temporal.</p>
+                        <p style="margin: 8px 0; text-align: justify;"><strong style="color: #6df816;">- Conflito Ocasional:</strong> Ocorrência pontual em um dos anos da série histórica; sugere baixa pressão antrópica.</p>
                         <p style="margin: 8px 0; text-align: justify;"><strong style="color: #6df816;">- Conflito Recorrente:</strong> Ocorrência em dois anos da série; sugere pressão antrópica moderada.</p>
                         <p style="margin: 8px 0; text-align: justify;"><strong style="color: #6df816;">- Conflito Frequente:</strong> Ocorrência em três anos; sugere pressão antrópica recorrente.</p>
-                        <p style="margin: 8px 0; text-align: justify;"><strong style="color: #6df816;">- Conflito Elevado:</strong> Ocorrência em quatro anos; sugere alta pressão antrópica.</p>
-                        <p style="margin: 8px 0; text-align: justify;"><strong style="color: #6df816;">- Crítico Persistente:</strong> Ocorrência em todos os anos; áreas críticas com necessidade de recuperação.</p>
+                        <p style="margin: 8px 0; text-align: justify;"><strong style="color: #6df816;">- Conflito Elevado:</strong> Ocorrência em quatro anos da série; sugere alta pressão antrópica.</p>
+                        <p style="margin: 8px 0; text-align: justify;"><strong style="color: #6df816;">- Área de Conflito Crítico Persistente:</strong> Ocorrência em todos os anos analisados; setores críticos com necessidade imediata de recuperação.</p>
                     </div>
                     <h4 style="color: #6df816; margin: 18px 0 12px 0; font-size: 12px; text-transform: uppercase; border-bottom: 2px dashed #6df816; padding-bottom: 6px; font-weight: bold;">TRANSPARÊNCIA</h4>
                     <div style="display: flex; align-items: center; gap: 12px;">
@@ -183,8 +183,8 @@
 
                     <label style="font-size: 11px; font-weight: bold; color: #aaa; display: block; margin-bottom: 5px;">SELECIONE A CATEGORIA DO MARCADOR:</label>
                     <select id="selectCorEstrela" style="width: 100%; background: #111111; color: #ffffff; border: 1px solid #6df816; padding: 6px; font-family: sans-serif; font-size: 11px; font-weight: bold; margin-bottom: 15px; cursor: pointer;">
-                        <option value="#00a2ff">Área de Conflito Ambiental</option>
-                        <option value="#d800ff">Área de Remanescente Conservação</option>
+                        <option value="#00a2ff">Área de Conflito Crítico Persistente</option>
+                        <option value="#d800ff">Área de Remanescente Conservado</option>
                     </select>
 
                     <div style="display: flex; gap: 10px;">
@@ -210,8 +210,8 @@
                     AUTORA: RAFAELA LICHETA
                 </div>
                 
-                <h2 style="color: #6df816; margin-top: 0; font-size: 16px; font-weight: bold; text-transform: uppercase; line-height: 1.5; letter-spacing: 0.5px; border-bottom: 2px dashed #333; padding-bottom: 15px; text-align: justify;">
-                    Mapa-Diagnóstico de Conflitos entre Expansão Antrópica e Áreas Prioritárias para Conservação da Mata Atlântica na Região Metropolitana de Curitiba
+                <h2 style="color: #6df816; margin-top: 0; font-size: 15px; font-weight: bold; text-transform: uppercase; line-height: 1.5; letter-spacing: 0.5px; border-bottom: 2px dashed #333; padding-bottom: 15px; text-align: justify;">
+                    Mapa-Diagnóstico de Conflitos Ambientais e Áreas Estratégicas de Conservação do Bioma Mata Atlântica na Região Metropolitana de Curitiba (RMC)
                 </h2>
                 
                 <p style="font-size: 14px; line-height: 1.6; text-align: justify; margin-top: 22px; color: #ffffff; font-weight: 600;">
@@ -248,7 +248,7 @@
                     <h4>1. Áreas Estratégicas Para Conservação do Bioma Mata Atlântica</h4>
                     <p style="text-align: justify;"><strong>Tipo:</strong> Camada vetorial composta por áreas selecionadas a partir dos resultados da análise dos Conflitos Ambientais e da distribuição das Áreas Prioritárias para conservação da Mata Atlântica.</p>
                     <p style="text-align: justify;"><strong>Descrição:</strong> As feições representam locais considerados relevantes para ações de conservação, recuperação ambiental, monitoramento territorial ou fortalecimento da conectividade ecológica na criação de novas UCs. O objetivo principal é destacar as áreas que demandam maior atenção no planejamento e gestão ambiental e que podem subsidiar futuras ações de gestão, conservação e recuperação do bioma na RMC.</p>
-                    <p style="text-align: justify;"><strong>Critérios de Seleção:</strong> Ocorrência de conflitos persistententes em áreas de elevada prioridade para conservação; presença de remanescentes estratégicos para a manutenção do bioma; potencial para recuperação ambiental e ampliação da conectividade entre fragmentos florestais; relevância territorial observada durante a análise espacial.</p>
+                    <p style="text-align: justify;"><strong>Critérios de Seleção:</strong> Ocorrência de conflitos persistentes em áreas de elevada prioridade para conservação; presença de remanescentes estratégicos para a manutenção do bioma; potencial para recuperação ambiental and ampliação da conectividade entre fragmentos florestais; relevância territorial observada durante a análise espacial.</p>
                     <p style="text-align: justify;"><strong>Fontes:</strong> MapBiomas (Uso e Cobertura); IBAMA (Áreas Prioritárias); IBGE (Limite RMC).</p>
                     <p style="text-align: justify;"><strong>SRC:</strong> SIRGAS 2000 / UTM Zona 22S (EPSG:31982).</p>
                 </div>
@@ -257,14 +257,14 @@
                     <h4>2. Persistência de Conflitos Ambientais no Bioma Mata Atlântica (2000-2024)</h4>
                     <p style="text-align: justify;"><strong>Tipo:</strong> Camada raster resultante da análise espaço-temporal dos conflitos entre a ocupação antrópica e as áreas prioritárias para conservação na RMC.</p>
                     <p style="text-align: justify;"><strong>Metodologia:</strong> Gerado a partir da soma dos mapas de conflito referentes aos anos de 2000, 2012, 2018, 2020 e 2024, permitindo identificar a frequência de ocorrência de conflitos ao longo da série histórica.</p>
-                    <p style="text-align: justify;"><strong>Classes de Persistência Catalogadas:</strong></p>
+                    <p style="text-align: justify;"><strong>Classes de Persistência Catalogadas (Sincronizadas):</strong></p>
                     <ul>
-                        <li style="text-align: justify;"><strong>Remanescente Conservado:</strong> Ausência de conflitos durante toda a série histórica, geralmente associado a UCs já consolidadas desde o início da série.</li>
+                        <li style="text-align: justify;"><strong>Área de Remanescente Conservado:</strong> Ausência de conflitos durante toda a série histórica, geralmente associado a UCs já consolidadas desde o início da série.</li>
                         <li style="text-align: justify;"><strong>Conflito Ocasional:</strong> Ocorrência pontual de conflitos em um dos anos da série histórica, sugerindo baixa pressão antrópica.</li>
                         <li style="text-align: justify;"><strong>Conflito Recorrente:</strong> Ocorrência de conflitos em dois dos anos da série histórica, sugerindo pressão antrópica moderada.</li>
                         <li style="text-align: justify;"><strong>Conflito Frequente:</strong> Ocorrência de conflitos em três dos anos da série histórica, sugerindo pressão antrópica recorrente.</li>
                         <li style="text-align: justify;"><strong>Conflito Elevado:</strong> Ocorrência de conflitos em quatro dos anos da série histórica, sugerindo alta pressão antrópica.</li>
-                        <li style="text-align: justify;"><strong>Conflito Crítico Persistente:</strong> Ocorrência de conflitos em todos os anos da série histórica, sugerindo áreas críticas para conservação com necessidade de recuperação.</li>
+                        <li style="text-align: justify;"><strong>Área de Conflito Crítico Persistente:</strong> Ocorrência de conflitos em todos os anos da série histórica, sugerindo áreas críticas para conservação com necessidade de recuperação.</li>
                     </ul>
                     <p style="text-align: justify;"><strong>Resolução Espacial:</strong> 30 metros.</p>
                     <p style="text-align: justify;"><strong>SRC:</strong> SIRGAS 2000 / UTM Zona 22S (EPSG:31982).</p>
@@ -331,7 +331,7 @@
                 });
             }
 
-            // 2. MÓDULO DE MAPEAMENTO PARTICIPATIVO COM CORREÇÃO DE EXCLUSÃO INTERATIVA (FIXED CONTEXTMENU)
+            // 2. MÓDULO DE MAPEAMENTO PARTICIPATIVO COM SKETCH LAYER VERDE NEON CUSTOMIZADA
             if (typeof map !== 'undefined') {
                 var fonteUsuario = new ol.source.Vector();
                 
@@ -352,9 +352,19 @@
                 });
                 map.addLayer(camadaUsuario);
 
+                // ATUALIZADO: Altera a cor da bolinha guia azul nativa do OpenLayers para VERDE NEON enquanto desenha!
+                var estiloSketch = new ol.style.Style({
+                    image: new ol.style.Circle({
+                        radius: 8,
+                        fill: new ol.style.Fill({ color: '#6df816' }),
+                        stroke: new ol.style.Stroke({ color: '#ffffff', width: 2 })
+                    })
+                });
+
                 var interacaoDesenho = new ol.interaction.Draw({
                     source: fonteUsuario,
-                    type: 'Point'
+                    type: 'Point',
+                    style: estiloSketch // Força o sketch layer a obedecer a paleta do WebSIG
                 });
 
                 interacaoDesenho.on('drawend', function(evt) {
@@ -390,10 +400,10 @@
                     }
                 };
                 
-                // CRIAÇÃO DO BOTÃO CONTEXTUAL DE EXCLUSÃO DE FORMA TOTALMENTE BLINDADA
+                // CRIAÇÃO DO BOTÃO CONTEXTUAL DE EXCLUSÃO DE FORMA BLINDADA
                 var menuExcluir = document.createElement('div');
                 menuExcluir.id = 'menuExcluir';
-                menuExcluir.style.position = 'fixed'; // FIXED impede que ele flutue fora da tela do mapa
+                menuExcluir.style.position = 'fixed'; 
                 menuExcluir.style.display = 'none';
                 menuExcluir.style.background = '#000000';
                 menuExcluir.style.border = '2px solid #6df816';
@@ -407,7 +417,6 @@
                 menuExcluir.innerText = '[EXCLUIR MARCADOR]';
                 document.body.appendChild(menuExcluir);
 
-                // CORREÇÃO: Varre as features da nossa própria fonte para evitar falha no clique
                 map.getViewport().addEventListener('contextmenu', function (evt) {
                     evt.preventDefault();
                     var pixel = map.getEventPixel(evt);
@@ -423,7 +432,6 @@
                         menuExcluir.style.top = evt.clientY + 'px';
                         menuExcluir.style.display = 'block';
                         
-                        // CORREÇÃO: mousedown com stopPropagation força a deleção ANTES do mapa fechar a div
                         menuExcluir.onmousedown = function(e) {
                             e.preventDefault();
                             e.stopPropagation();
